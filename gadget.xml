@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <name>Cronometro</name>
+  <version>1.0.0.0</version>
+  <author name="António Melo">
+    <info url="msdn.microsoft.com" />
+  </author>
+  <description> Cronometro .</description>
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="cronometro.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+    </host>
+  </hosts>
+</gadget>

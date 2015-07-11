@@ -1,0 +1,66 @@
+<!DOCTYE html>
+<html>
+<head>
+	<title>Cronometro</title>
+	<style type="text/css">
+        body
+        {
+            margin: 0;
+            width: 130px;
+            height: 40px;
+            font-family: verdana;
+            font-weight: bold;
+            font-size: 20px;
+			 color: #FFFFFF;
+        }
+    </style>
+	<script  type="text/javascript">
+	function carga()
+	{
+		contador_s =0;
+		contador_m=0;
+		contador_h=0;
+		s=document.getElementById("segundos");
+		m=document.getElementById("minutos");
+		h=document.getElementById("horas");
+		
+		window.setInterval(
+			function(){
+				if(contador_s ==60)
+				{
+					contador_s=0;
+					contador_m++;
+					if(contador_m==60)
+					{
+						contador_m=0;
+						contador_h++;
+						if(contador_h ==24)
+						{
+							contador_s=0;
+							contador_m=0;
+							contador_h=0;
+						}
+					}
+				}
+				s.innerHTML =contador_s;
+				m.innerHTML =contador_m;
+				h.innerHTML =contador_h;
+				contador_s++;
+			}
+			,1000);
+	}
+	function init()
+            {
+                var oBackground = document.getElementById("imgBackground");
+                oBackground.src = "url(images/background.png)";
+            }
+	</script>
+
+</head>
+
+<body onload="init();carga()">
+	<g:background id="imgBackground">
+		<span id="horas">0</span>h:<span id="minutos">0</span>m:<span id="segundos">0</span>s
+	</g:background>
+</body>
+</html>
